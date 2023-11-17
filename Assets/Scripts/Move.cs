@@ -12,9 +12,10 @@ public class Move : MonoBehaviour
     public float dashCooldown = 3;
     Animator playerAnimator;
 
-    float horizontalInput;
+    private float horizontalInput;
     bool canDash = true;
     bool isDashing = false;
+    bool isMoving = false;
     Rigidbody2D rb;
     [SerializeField] private Transform GroundCheck;
     private bool onGround;
@@ -28,16 +29,38 @@ public class Move : MonoBehaviour
     void Update()
     {
         onGround = Physics2D.OverlapCircle(GroundCheck.position, 0.25f, LayerMask.GetMask("Ground"));
-        if (true)
-        {
-            float horizontalInput = Input.GetAxis("Horizontal");
-            float movement = horizontalInput * moveSpeed;
+        horizontalInput = Input.GetAxis("Horizontal");
+        float movement = horizontalInput * moveSpeed;
+        
+        if (horizontalInput != 0)
+        { 
             rb.velocity = new Vector2(movement, rb.velocity.y);
+            playerAnimator.SetBool("isMoving", true);
+            isMoving = true;
         }
+        else
+        {
+            playerAnimator.SetBool("isMoving", false);
+            isMoving = false;
+        }
+        
         if (Input.GetKeyDown(KeyCode.Space) && onGround)
         {
+            playerAnimator.SetTrigger("Jump");
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
+
+        if (horizontalInput > 0)
+        {
+            transform.localScale = new Vector3(1f, 1f, 1f); // Sağa doğru yürüyor, scale'ı orijinal hale getir
+        }
+        else if (horizontalInput < 0)
+        {
+            transform.localScale = new Vector3(-1f, 1f, 1f); // Sola doğru yürüyor, scale'ı -1 katı al
+        }
+
+
+
 
         if (Input.GetKeyDown(KeyCode.Z) && canDash)
         {
