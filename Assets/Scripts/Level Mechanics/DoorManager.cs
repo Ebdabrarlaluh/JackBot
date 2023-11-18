@@ -13,7 +13,8 @@ public class DoorManager : MonoBehaviour
         {
             door.SetTrigger("Open");
             newLevel = true;
-            
+            Animator player = other.GetComponent<Animator>();
+            player.SetTrigger("newLevel");
         }
     }
 }
