@@ -45,9 +45,12 @@ public class Dash : MonoBehaviour
             isDash = false;
         }
         transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime); // Hedefe doğru hareket et
+
+        if(Vector2.Distance(transform.position, targetPosition) == 0) {
+            isMoving = false;
+        }
         if (Vector2.Distance(startPosition, targetPosition)-Vector2.Distance(transform.position, targetPosition)>=stoppingDistance) // Hedefe belirli bir mesafede mi?
         {
-            Debug.LogError("girdi");
             isMoving = false; // Hareket durumunu kapat
         }
     }

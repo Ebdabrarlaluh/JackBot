@@ -12,10 +12,8 @@ public class Move : MonoBehaviour
     public float dashCooldown = 3;
     Animator playerAnimator;
 
+    private bool m_FacingRight=true;
     private float horizontalInput;
-    bool canDash = true;
-    bool isDashing = false;
-    bool isMoving = false;
     Rigidbody2D rb;
     [SerializeField] private Transform GroundCheck;
     private bool onGround;
@@ -36,12 +34,10 @@ public class Move : MonoBehaviour
         { 
             rb.velocity = new Vector2(movement, rb.velocity.y);
             playerAnimator.SetBool("isMoving", true);
-            isMoving = true;
         }
         else
         {
             playerAnimator.SetBool("isMoving", false);
-            isMoving = false;
         }
         
         if (Input.GetKeyDown(KeyCode.Space) && onGround)
@@ -50,33 +46,22 @@ public class Move : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
 
-        if (horizontalInput > 0)
+        if (horizontalInput > 0 && !m_FacingRight)
         {
-            transform.localScale = new Vector3(1f, 1f, 1f); // Sağa doğru yürüyor, scale'ı orijinal hale getir
+            transform.Rotate(0f, 180f, 0f);
+            m_FacingRight = true;
         }
-        else if (horizontalInput < 0)
+        else if (horizontalInput < 0&& m_FacingRight)
         {
-            transform.localScale = new Vector3(-1f, 1f, 1f); // Sola doğru yürüyor, scale'ı -1 katı al
+            transform.Rotate(0f, 180f, 0f);
+            m_FacingRight = false;
         }
 
 
 
 
-        if (Input.GetKeyDown(KeyCode.Z) && canDash)
-        {
-            StartCoroutine(Dash());
-        }
+        
     }
-    private IEnumerator Dash() 
-    {
-        canDash = false;
-        isDashing = true;
-        rb.gravityScale = 0f;
-        rb.velocity = new Vector2(horizontalInput * dashForce, 0f);
-        yield return new WaitForSeconds(dashTime);
-        rb.gravityScale = 1f;
-        isDashing = false;
-        yield return new WaitForSeconds(dashCooldown);
-        canDash = true;
-    }
+
+    
 }
