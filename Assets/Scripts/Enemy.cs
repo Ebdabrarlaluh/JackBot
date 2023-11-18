@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor.SceneManagement;
 
 public class Enemy : MonoBehaviour
 {
@@ -39,7 +40,8 @@ public class Enemy : MonoBehaviour
     {
         if (col.CompareTag("Player"))
         {
-            Destroy(col.gameObject); 
+            Destroy(col.gameObject);
+            EditorSceneManager.LoadScene("SampleScene");
         }
     }
 }

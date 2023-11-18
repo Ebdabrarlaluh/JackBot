@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class DoorManager : MonoBehaviour
@@ -15,6 +16,14 @@ public class DoorManager : MonoBehaviour
             newLevel = true;
             Animator player = other.GetComponent<Animator>();
             player.SetTrigger("newLevel");
+
+            StartCoroutine(YeniLevelYukleme());
         }
+    }
+
+    IEnumerator YeniLevelYukleme()
+    {
+        yield return new WaitForSeconds(1.8f);
+        EditorSceneManager.LoadScene("Level2");
     }
 }
