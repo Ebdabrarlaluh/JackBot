@@ -38,11 +38,13 @@ public class Move : MonoBehaviour
 
         if (horizontalInput > 0 && !m_FacingRight)
         {
+            Debug.LogError("girdi sola dönme");
             transform.Rotate(0f, 180f, 0f);
             m_FacingRight = true;
         }
         else if (horizontalInput < 0&& m_FacingRight)
         {
+            Debug.LogError("girdi sağa dönme");
             transform.Rotate(0f, 180f, 0f);
             m_FacingRight = false;
         }

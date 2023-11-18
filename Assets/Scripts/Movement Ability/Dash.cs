@@ -10,24 +10,39 @@ public class Dash : MonoBehaviour
     private bool isMoving = false; // Karakter hareket ediyor mu?
     private bool isDash = false;
 
+    public float dashDelay = 4f;
+    private float dashDelaySeconds;
+
     public Transform player;
 
     public GhostEffect ghost;
 
     public KeyCode dashKeyCode = KeyCode.J;
 
+    private void Start()
+    {
+        dashDelaySeconds = 0;
+    }
     void Update()
     {
-        if (Input.GetKeyDown(dashKeyCode)) // Fare sol tuşuna tıklama algılama
+        if (dashDelaySeconds > 0)
         {
-            SetTargetPosition(); // Hedef pozisyonu belirle
+            dashDelaySeconds -= Time.deltaTime;
         }
+        else
+        {
+            if (Input.GetKeyDown(dashKeyCode)) // Fare sol tuşuna tıklama algılama
+            {
+                 SetTargetPosition(); // Hedef pozisyonu belirle
+            }
 
-        if (isMoving)
-        {
-            ghost.makeGhost = true;
-            MovePlayer(); // Karakteri hareket ettir
+            if (isMoving)
+            {
+                  ghost.makeGhost = true;
+                  MovePlayer(); // Karakteri hareket ettir
+            }
         }
+        
     }
 
     void SetTargetPosition()
@@ -49,10 +64,12 @@ public class Dash : MonoBehaviour
 
         if(Vector2.Distance(transform.position, targetPosition) == 0) {
             isMoving = false;
+            dashDelaySeconds = dashDelay;
             ghost.makeGhost = false;
         }
         if (Vector2.Distance(startPosition, targetPosition)-Vector2.Distance(transform.position, targetPosition)>=stoppingDistance) // Hedefe belirli bir mesafede mi?
         {
+            dashDelaySeconds = dashDelay;
             isMoving = false; // Hareket durumunu kapat
             ghost.makeGhost = false;
         }
