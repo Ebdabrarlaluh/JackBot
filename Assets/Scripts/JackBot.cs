@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class JackBot : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public float gorunmeSuresi = 10f; // Objenin ekranda kalacağı süre
+    private float zamanlayici;
+
     void Start()
     {
-        
+        zamanlayici = gorunmeSuresi; // Zamanlayıcıyı başlat
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        zamanlayici -= Time.deltaTime;
+
+        if (zamanlayici <= 0f)
+        {
+            gameObject.SetActive(false); // Objeyi devre dışı bırak
+            // gameObject.SetActive(true); // Eğer objenin tekrar görünmesini istiyorsanız bu satırı ekleyebilirsiniz
+            zamanlayici = gorunmeSuresi; // Zamanlayıcıyı sıfırla veya tekrar başlat
+        }
     }
 }
