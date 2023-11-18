@@ -1784,6 +1784,7 @@ GameObject:
   - component: {fileID: 1301525808}
   - component: {fileID: 1301525811}
   - component: {fileID: 1301525810}
+  - component: {fileID: 1301525812}
   m_Layer: 0
   m_Name: Jack
   m_TagString: Player
@@ -1987,6 +1988,7 @@ MonoBehaviour:
   moveSpeed: 25
   stoppingDistance: 6
   player: {fileID: 1301525803}
+  ghost: {fileID: 1301525812}
   dashKeyCode: 106
 --- !u!114 &1301525811
 MonoBehaviour:
@@ -2002,6 +2004,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpForce: 10
   GroundCheck: {fileID: 1921454661}
+--- !u!114 &1301525812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301525801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a54b3215ad643494ebfbe67e345141c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ghostDelay: 0.03
+  ghost: {fileID: 152872956860221639, guid: 4593bc3f2de43b146895578bec74ff26, type: 3}
+  makeGhost: 0
 --- !u!1 &1410683779
 GameObject:
   m_ObjectHideFlags: 0
