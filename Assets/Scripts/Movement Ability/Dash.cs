@@ -12,7 +12,7 @@ public class Dash : MonoBehaviour
 
     public Transform player;
 
-    
+    public GhostEffect ghost;
 
     public KeyCode dashKeyCode = KeyCode.J;
 
@@ -25,6 +25,7 @@ public class Dash : MonoBehaviour
 
         if (isMoving)
         {
+            ghost.makeGhost = true;
             MovePlayer(); // Karakteri hareket ettir
         }
     }
@@ -48,10 +49,12 @@ public class Dash : MonoBehaviour
 
         if(Vector2.Distance(transform.position, targetPosition) == 0) {
             isMoving = false;
+            ghost.makeGhost = false;
         }
         if (Vector2.Distance(startPosition, targetPosition)-Vector2.Distance(transform.position, targetPosition)>=stoppingDistance) // Hedefe belirli bir mesafede mi?
         {
             isMoving = false; // Hareket durumunu kapat
+            ghost.makeGhost = false;
         }
     }
 }
