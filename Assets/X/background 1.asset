@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: background
+  m_Name: background 1
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: 45b90f1ac8674ae4490b58cc2cb5c64a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6bf15919995feed46a67fa3992ff8f09, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

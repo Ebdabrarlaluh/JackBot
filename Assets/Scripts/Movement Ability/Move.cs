@@ -12,7 +12,6 @@ public class Move : MonoBehaviour
     private bool m_FacingRight=true;
     private float horizontalInput;
     Rigidbody2D rb;
-    [SerializeField] private Transform GroundCheck;
 
     void Start()
     {
@@ -36,7 +35,6 @@ public class Move : MonoBehaviour
         {
             playerAnimator.SetBool("isMoving", false);
         }
-        
 
         if (horizontalInput > 0 && !m_FacingRight)
         {
@@ -48,8 +46,5 @@ public class Move : MonoBehaviour
             transform.Rotate(0f, 180f, 0f);
             m_FacingRight = false;
         }
-
     }
-
-    
 }
