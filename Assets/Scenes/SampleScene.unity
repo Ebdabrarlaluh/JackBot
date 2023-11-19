@@ -122,6 +122,7 @@ NavMeshSettings:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1001 &380334645
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -224,12 +225,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 =======
+=======
+>>>>>>> 9c1e1bcd0c13bdb31e504b9d8f70209bf2e9ccc9
 --- !u!4 &254659400 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4931786342702888910, guid: 89f80dbb01ee1f346a1fd42d0d707e22,
     type: 3}
   m_PrefabInstance: {fileID: 1897749319}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
+>>>>>>> 9c1e1bcd0c13bdb31e504b9d8f70209bf2e9ccc9
+=======
 >>>>>>> 9c1e1bcd0c13bdb31e504b9d8f70209bf2e9ccc9
 --- !u!1 &426721671
 GameObject:
@@ -283,7 +289,11 @@ MonoBehaviour:
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Follow: {fileID: 1406420082}
+=======
+  m_Follow: {fileID: 254659400}
+>>>>>>> 9c1e1bcd0c13bdb31e504b9d8f70209bf2e9ccc9
 =======
   m_Follow: {fileID: 254659400}
 >>>>>>> 9c1e1bcd0c13bdb31e504b9d8f70209bf2e9ccc9
@@ -1561,7 +1571,11 @@ Transform:
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LocalPosition: {x: -4.1, y: -0.34000015, z: -10}
+=======
+  m_LocalPosition: {x: -4.1, y: -3, z: -10}
+>>>>>>> 9c1e1bcd0c13bdb31e504b9d8f70209bf2e9ccc9
 =======
   m_LocalPosition: {x: -4.1, y: -3, z: -10}
 >>>>>>> 9c1e1bcd0c13bdb31e504b9d8f70209bf2e9ccc9
@@ -1571,6 +1585,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
 --- !u!1 &693207970
 GameObject:
@@ -1756,6 +1771,8 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 807262205}
   m_PrefabAsset: {fileID: 0}
+=======
+>>>>>>> 9c1e1bcd0c13bdb31e504b9d8f70209bf2e9ccc9
 =======
 >>>>>>> 9c1e1bcd0c13bdb31e504b9d8f70209bf2e9ccc9
 --- !u!1 &1426477377
@@ -3788,7 +3805,10 @@ Tilemap:
     e32: 0
     e33: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 9c1e1bcd0c13bdb31e504b9d8f70209bf2e9ccc9
 --- !u!1001 &1897749319
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3863,6 +3883,9 @@ PrefabInstance:
       objectReference: {fileID: 519420031}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89f80dbb01ee1f346a1fd42d0d707e22, type: 3}
+<<<<<<< HEAD
+>>>>>>> 9c1e1bcd0c13bdb31e504b9d8f70209bf2e9ccc9
+=======
 >>>>>>> 9c1e1bcd0c13bdb31e504b9d8f70209bf2e9ccc9
 --- !u!1001 &2112349965
 PrefabInstance:

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Prefabs/Canvas.prefab.meta
 guid: 2f0c9e990c822e84eba209258397a7c5
+========
+guid: 785c9d07acbb4a94c8b6056cdf49e712
+>>>>>>>> 9c1e1bcd0c13bdb31e504b9d8f70209bf2e9ccc9:Assets/Prefabs/diken.prefab.meta
 PrefabImporter:
   externalObjects: {}
   userData: 
