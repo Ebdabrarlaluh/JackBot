@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class DoorManager : MonoBehaviour
@@ -24,29 +24,29 @@ public class DoorManager : MonoBehaviour
     IEnumerator YeniLevelYukleme()
     {
         yield return new WaitForSeconds(1.8f);
-        if (EditorSceneManager.GetActiveScene().name=="Level2")
+        if (SceneManager.GetActiveScene().name=="Level2")
         {
-            EditorSceneManager.LoadScene("Level3");
+            SceneManager.LoadScene("Level3");
         }
-        if (EditorSceneManager.GetActiveScene().name == "Level3")
+        if (SceneManager.GetActiveScene().name == "Level3")
         {
-            EditorSceneManager.LoadScene("Level4");
+            SceneManager.LoadScene("Level4");
         }
-        if (EditorSceneManager.GetActiveScene().name == "Level4")
+        if (SceneManager.GetActiveScene().name == "Level4")
         {
-            EditorSceneManager.LoadScene("Level5");
+            SceneManager.LoadScene("Level5");
         }
-        if (EditorSceneManager.GetActiveScene().name == "Level5")
+        if (SceneManager.GetActiveScene().name == "Level5")
         {
-            EditorSceneManager.LoadScene("Level6");
+            SceneManager.LoadScene("Level6");
         }
-        if (EditorSceneManager.GetActiveScene().name == "Level6")
+        if (SceneManager.GetActiveScene().name == "Level6")
         {
-            EditorSceneManager.LoadScene("Level7");
+            SceneManager.LoadScene("Level7");
         }
-        if (EditorSceneManager.GetActiveScene().name == "Level7")
+        if (SceneManager.GetActiveScene().name == "Level7")
         {
-            EditorSceneManager.LoadScene("Level8");
+            SceneManager.LoadScene("Level8");
         }
     }
 }

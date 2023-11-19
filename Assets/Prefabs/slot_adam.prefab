@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8055478531818699836}
   - component: {fileID: 8055478531818699837}
   m_Layer: 0
-  m_Name: Bubble
+  m_Name: Levitation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

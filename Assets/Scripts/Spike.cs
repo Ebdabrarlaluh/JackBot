@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class Spike : MonoBehaviour
@@ -10,7 +10,7 @@ public class Spike : MonoBehaviour
         if (col.gameObject.CompareTag("Player"))
         {
             Destroy(col.gameObject);
-            EditorSceneManager.LoadScene(EditorSceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
         }
     }

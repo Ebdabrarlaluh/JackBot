@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor.SceneManagement;
+
+using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour
 {
@@ -52,7 +53,7 @@ public class Enemy : MonoBehaviour
         if (col.gameObject.CompareTag("Player"))
         {
             Destroy(col.gameObject);
-            EditorSceneManager.LoadScene(EditorSceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
     private IEnumerator Levitate() 
