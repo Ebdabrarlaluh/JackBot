@@ -11,8 +11,13 @@ public class Levitation : MonoBehaviour
     public float delayTime=3f;
     int lookRight = 1;
     bool fireOn = true;
+    public AudioSource audio;
     Rigidbody2D rb;
 
+    private void Start()
+    {
+        audio = GetComponent<AudioSource>();
+    }
     void Update()
     {
         if (Input.GetKeyDown(fireKeyCode) && fireOn)
@@ -22,7 +27,7 @@ public class Levitation : MonoBehaviour
             StartCoroutine("ReloadTime");
         }
         ; // Varsayılan olarak sağa bakıyor varsayalım
-
+        
         // Karakterin yönünü hareketine göre güncelleme örneği
         float hareketYonu = Input.GetAxis("Horizontal");
         if (hareketYonu > 0)
@@ -37,6 +42,7 @@ public class Levitation : MonoBehaviour
 
     void Fire()
     {
+        audio.Play();
         GameObject mermi = Instantiate(mermiPrefab, ateşNoktası.position, Quaternion.identity);
         rb = mermi.GetComponent<Rigidbody2D>();
         if (rb != null)
