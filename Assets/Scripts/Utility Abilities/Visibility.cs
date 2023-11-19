@@ -7,6 +7,9 @@ public class Visibility : MonoBehaviour
     public KeyCode visibilityKeyCode = KeyCode.C;
     public SpriteRenderer character;
 
+    private float visDelaySeconds;
+    private float visDelay=4f;
+
     public float activationTime = 5.0f;
     private bool isInvisible;
     private Color col;
@@ -14,23 +17,31 @@ public class Visibility : MonoBehaviour
     {
         isInvisible = false;
         col = character.color;
+        visDelaySeconds = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(visibilityKeyCode)&& activationTime>0 && !isInvisible)
+        if (visDelaySeconds > 0)
         {
-            GoTransparent();
+            visDelaySeconds -= Time.deltaTime;
         }
+        else
+        {
+            if (Input.GetKeyDown(visibilityKeyCode)&& activationTime>0 && !isInvisible)
+            {
+                GoTransparent();
+            }
 
-        if (activationTime < 0)
-        {
-            GoOpaque();
-        }
-        else if (isInvisible)
-        {
-            activationTime -= Time.deltaTime;
+            if (activationTime < 0)
+            {
+                GoOpaque();
+            }
+            else if (isInvisible)
+            {
+                activationTime -= Time.deltaTime;
+            }
         }
     }
 
@@ -40,6 +51,8 @@ public class Visibility : MonoBehaviour
         col.r = 0;
         character.color=col;
         isInvisible = true;
+
+        this.tag = "Invisible";
     }
 
     void GoOpaque()
@@ -49,5 +62,7 @@ public class Visibility : MonoBehaviour
         character.color = col;
         isInvisible = false;
         activationTime = 5f;
+        this.tag = "Player";
+        visDelaySeconds = visDelay;
     }
 }

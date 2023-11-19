@@ -41,7 +41,13 @@ public class Levitation : MonoBehaviour
         rb = mermi.GetComponent<Rigidbody2D>();
         if (rb != null)
         {
-            rb.velocity = new Vector2(lookRight * bulletSpeed,0);
+            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition); // Fare konumu
+
+            Vector2 characterPosition = rb.position; // Karakterin konumu
+
+            Vector2 direction = (mousePosition - characterPosition).normalized; // Yön vektörü
+
+            rb.velocity = direction * bulletSpeed;
         }
     }
     private IEnumerator ReloadTime() 

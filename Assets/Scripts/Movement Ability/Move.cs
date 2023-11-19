@@ -8,7 +8,7 @@ public class Move : MonoBehaviour
 
     Animator playerAnimator;
     SpriteRenderer spriteRenderer;
-
+  
     private float horizontalInput;
     Rigidbody2D rb;
 
@@ -38,10 +38,12 @@ public class Move : MonoBehaviour
         if (horizontalInput > 0)
         {
             spriteRenderer.flipX = false;
+           
         }
         else if (horizontalInput < 0)
         {
             spriteRenderer.flipX = true;
+
         }
     }
 }
