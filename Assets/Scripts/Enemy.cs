@@ -52,7 +52,7 @@ public class Enemy : MonoBehaviour
         if (col.gameObject.CompareTag("Player"))
         {
             Destroy(col.gameObject);
-            EditorSceneManager.LoadScene("SampleScene");
+            EditorSceneManager.LoadScene(EditorSceneManager.GetActiveScene().buildIndex);
         }
     }
     private IEnumerator Levitate() 
