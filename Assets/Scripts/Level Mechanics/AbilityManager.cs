@@ -4,8 +4,6 @@ public class AbilityManager : MonoBehaviour
 {
     public GameObject objectWithScripts; // Kontrol edilecek obje
     public MonoBehaviour[] allScripts; // Etkinleştirilecek betikler
-    public GameObject grap;
-
     void Start()
     {
         // Öncelikle, tüm betikleri devre dışı bırak
@@ -17,9 +15,10 @@ public class AbilityManager : MonoBehaviour
     }
     public void EnableScripts(string name)
     {
-       
+
+        if (name == "Grapple")
+        objectWithScripts.transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(true);
             
-            grap.SetActive(true);
 
             
 

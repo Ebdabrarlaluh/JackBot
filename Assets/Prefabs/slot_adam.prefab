@@ -615,7 +615,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5cb881dd43db5140a0f726c03c1610e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectWithScripts: {fileID: 0}
+  objectWithScripts: {fileID: 4931786342702888908, guid: 89f80dbb01ee1f346a1fd42d0d707e22,
+    type: 3}
   allScripts: []
   grap: {fileID: 0}
 --- !u!1 &8055478532967078150
