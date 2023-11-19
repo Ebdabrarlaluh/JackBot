@@ -23,6 +23,7 @@ public class AbilityManager : MonoBehaviour
         // Ardından, sadece belirli betikleri etkinleştir
         foreach (MonoBehaviour script in allScripts)
         {
+            
             if (script.GetType().Name.ToString() == name)
             {
                 Debug.LogError("gird");

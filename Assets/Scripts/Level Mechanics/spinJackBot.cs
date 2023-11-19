@@ -9,8 +9,8 @@ public class spinJackBot : MonoBehaviour
     public GameObject[] activeObjects;
     private bool onceSpin;
 
-    public Image firstImage;
-    public Image secondImage;
+    //public Image firstImage;
+    //public Image secondImage;
 
     public AbilityManager jackpot;
     void Start()
@@ -131,7 +131,7 @@ public class spinJackBot : MonoBehaviour
         }
         if (x == "Dash")
         {
-            jackpot.EnableScripts("Ghost Effect");
+            jackpot.EnableScripts("GhostEffect");
         }
 
         jackpot.EnableScripts(x);
