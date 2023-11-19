@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class JackBot : MonoBehaviour
 {
-    public float gorunmeSuresi = 10f; // Objenin ekranda kalacağı süre
+    public float gorunmeSuresi = 20f; // Objenin ekranda kalacağı süre
     private float zamanlayici;
 
     void Start()

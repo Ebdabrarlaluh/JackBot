@@ -504,6 +504,7 @@ GameObject:
   - component: {fileID: 8055478532905778788}
   - component: {fileID: 8055478532905778793}
   - component: {fileID: 5517785986164325108}
+  - component: {fileID: 5504963885403984742}
   m_Layer: 0
   m_Name: slot_adam
   m_TagString: Untagged
@@ -633,6 +634,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9805e6b2cc212d9478fadc58eb79c892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterTransform: {fileID: 0}
+  textToDisplay: Merhaba!
+  textMeshProComponent: {fileID: 0}
+--- !u!114 &5504963885403984742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8055478532905778789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2c7ae49f5b3d2244ace19762c75a4dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gorunmeSuresi: 20
 --- !u!1 &8055478532967078150
 GameObject:
   m_ObjectHideFlags: 0
