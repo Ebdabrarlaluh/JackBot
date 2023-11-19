@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
-    // Start is called before the first frame update
     public float moveSpeed = 5;
 
     Animator playerAnimator;
+    SpriteRenderer spriteRenderer;
 
-    private bool m_FacingRight=true;
     private float horizontalInput;
     Rigidbody2D rb;
 
@@ -17,9 +16,9 @@ public class Move : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -36,17 +35,13 @@ public class Move : MonoBehaviour
             playerAnimator.SetBool("isMoving", false);
         }
 
-        if (horizontalInput > 0 && !m_FacingRight)
+        if (horizontalInput > 0)
         {
-            Debug.LogError("girdi sola dönme");
-            transform.Rotate(0f, 180f, 0f);
-            m_FacingRight = true;
+            spriteRenderer.flipX = false;
         }
-        else if (horizontalInput < 0&& m_FacingRight)
+        else if (horizontalInput < 0)
         {
-            Debug.LogError("girdi sağa dönme");
-            transform.Rotate(0f, 180f, 0f);
-            m_FacingRight = false;
+            spriteRenderer.flipX = true;
         }
     }
 }

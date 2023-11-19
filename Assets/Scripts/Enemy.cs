@@ -43,5 +43,17 @@ public class Enemy : MonoBehaviour
             Destroy(col.gameObject);
             EditorSceneManager.LoadScene("SampleScene");
         }
+
+        if (col.CompareTag("Projectile"))
+        {
+            StartCoroutine(Levitate());
+        }
+
+    }
+    private IEnumerator Levitate() 
+    {
+        rb.gravityScale = -5;
+        yield return new WaitForSeconds(2f);
+        rb.gravityScale = 2;
     }
 }
