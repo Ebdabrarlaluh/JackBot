@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class spinJackBot : MonoBehaviour
 {
@@ -7,6 +8,9 @@ public class spinJackBot : MonoBehaviour
     public GameObject[] secondSlotObjects;
     public GameObject[] activeObjects;
     private bool onceSpin;
+
+    public Image firstImage;
+    public Image secondImage;
 
     public AbilityManager jackpot;
     void Start()
@@ -62,6 +66,11 @@ public class spinJackBot : MonoBehaviour
             int randomIndex = Random.Range(0, slotObjects.Length);
             activateScripts(slotObjects[randomIndex]);
             slotObjects[randomIndex].SetActive(true);
+
+            //SpriteRenderer spriteRenderer = slotObjects[randomIndex].GetComponent<SpriteRenderer>();
+            //Sprite sprite = spriteRenderer.sprite;
+
+            //firstImage.sprite = sprite;
             yield return new WaitForSeconds(1f);
 
             
@@ -101,6 +110,12 @@ public class spinJackBot : MonoBehaviour
             int secondRandomIndex = Random.Range(0, secondSlotObjects.Length);
             activateScripts(secondSlotObjects[secondRandomIndex]);
             secondSlotObjects[secondRandomIndex].SetActive(true);
+
+            //SpriteRenderer spriteRenderer2 = secondSlotObjects[secondRandomIndex].GetComponent<SpriteRenderer>();
+            //Sprite sprite2 = spriteRenderer2.sprite;
+
+            //secondImage.sprite = sprite2;
+
             yield return new WaitForSeconds(3f);
             onceSpin = false;
         }

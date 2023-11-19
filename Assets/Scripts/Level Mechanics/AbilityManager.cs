@@ -20,14 +20,12 @@ public class AbilityManager : MonoBehaviour
         objectWithScripts.transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(true);
             
 
-            
-
         // Ardından, sadece belirli betikleri etkinleştir
         foreach (MonoBehaviour script in allScripts)
         {
             if (script.GetType().Name.ToString() == name)
             {
-                
+                Debug.LogError("gird");
                 script.enabled = true;
             }
         }
