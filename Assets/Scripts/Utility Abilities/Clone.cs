@@ -25,7 +25,7 @@ public class Clone : MonoBehaviour
         {
             if (Input.GetKeyDown(cloneKeyCode))
             {
-                Instantiate(clone, transform.position, transform.rotation);
+                Instantiate(clone, new Vector2(transform.position.x+1,transform.position.y), transform.rotation);
                 cloneDelaySeconds = cloneDelay;
             }
         }
