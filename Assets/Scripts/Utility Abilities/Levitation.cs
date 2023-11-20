@@ -9,7 +9,7 @@ public class Levitation : MonoBehaviour
     public KeyCode fireKeyCode = KeyCode.E;
     public float bulletSpeed =25f;
     public float delayTime=3f;
-    int lookRight = 1;
+    float lookRight;
     bool fireOn = true;
     public AudioSource audio;
     Rigidbody2D rb;
@@ -32,18 +32,19 @@ public class Levitation : MonoBehaviour
         float hareketYonu = Input.GetAxis("Horizontal");
         if (hareketYonu > 0)
         {
-            lookRight = 1;
+            lookRight = 0;
         }
         else if (hareketYonu < 0)
         {
-            lookRight = -1;
+            lookRight = 1.3f;
         }
+        
     }
 
     void Fire()
     {
         audio.Play();
-        GameObject mermi = Instantiate(mermiPrefab, ateşNoktası.position, Quaternion.identity);
+        GameObject mermi = Instantiate(mermiPrefab, new Vector2(ateşNoktası.position.x-lookRight,ateşNoktası.position.y), Quaternion.identity);
         rb = mermi.GetComponent<Rigidbody2D>();
         if (rb != null)
         {

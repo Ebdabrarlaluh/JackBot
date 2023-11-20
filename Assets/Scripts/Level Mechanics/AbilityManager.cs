@@ -18,7 +18,11 @@ public class AbilityManager : MonoBehaviour
 
         if (name == "Grapple")
         objectWithScripts.transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(true);
-            
+
+        if (name == "Levitation")
+            objectWithScripts.transform.GetChild(2).gameObject.SetActive(true);
+        
+       
 
         // Ardından, sadece belirli betikleri etkinleştir
         foreach (MonoBehaviour script in allScripts)
@@ -26,7 +30,6 @@ public class AbilityManager : MonoBehaviour
             
             if (script.GetType().Name.ToString() == name)
             {
-                Debug.LogError("gird");
                 script.enabled = true;
             }
         }

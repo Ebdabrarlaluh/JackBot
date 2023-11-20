@@ -488,6 +488,11 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1025750296514988898, guid: 2f0c9e990c822e84eba209258397a7c5,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1080769650065480873, guid: 2f0c9e990c822e84eba209258397a7c5,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -626,7 +631,7 @@ PrefabInstance:
     - target: {fileID: 6969595081900159173, guid: 2f0c9e990c822e84eba209258397a7c5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f0c9e990c822e84eba209258397a7c5, type: 3}
@@ -936,6 +941,7 @@ GameObject:
   - component: {fileID: 1817714644}
   - component: {fileID: 1817714646}
   - component: {fileID: 1817714645}
+  - component: {fileID: 1817714647}
   m_Layer: 0
   m_Name: -Ground
   m_TagString: Untagged
@@ -1535,6 +1541,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &1817714647
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817714643}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!1 &2029944058
 GameObject:
   m_ObjectHideFlags: 0

@@ -29,6 +29,7 @@ public class Move : MonoBehaviour
         { 
             rb.velocity = new Vector2(movement, rb.velocity.y);
             playerAnimator.SetBool("isMoving", true);
+            transform.parent = null;
         }
         else
         {

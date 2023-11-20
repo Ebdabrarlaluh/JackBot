@@ -19,4 +19,19 @@ public class LeftRightPlatform : MonoBehaviour
         float yeniX = Mathf.PingPong(Time.time * hareketHizi, hareketMesafesi) + baslangicPozisyonu.x;
         transform.position = new Vector3(yeniX, transform.position.y, transform.position.z);
     }
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.CompareTag("Player"))
+        {
+            col.transform.parent = transform;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D col)
+    {
+        if (col.gameObject.CompareTag("Player"))
+        {
+            col.transform.parent = null;
+        }
+    }
 }
