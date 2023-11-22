@@ -24,6 +24,10 @@ public class DoorManager : MonoBehaviour
     IEnumerator YeniLevelYukleme()
     {
         yield return new WaitForSeconds(1.8f);
+        if (SceneManager.GetActiveScene().name == "TestScene")
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
         if (SceneManager.GetActiveScene().name=="Level2")
         {
             SceneManager.LoadScene("Level3");
