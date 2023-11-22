@@ -52,5 +52,9 @@ public class DoorManager : MonoBehaviour
         {
             SceneManager.LoadScene("Level8");
         }
+        if (SceneManager.GetActiveScene().name == "TestScene")
+        {
+            SceneManager.LoadScene("TestScene");
+        }
     }
 }

@@ -4,30 +4,35 @@ public class CloneWalk : MonoBehaviour
 {
     public float hareketHizi =5f; // Klonun hareket hızı
     public float cloneLiveTime = 4f;
+    Vector2 moveDirection;
+    Rigidbody2D rb;
 
     void Start()
     {
         // Klonun oluşturulduğu anda sadece ileri yönde hareket etmesi
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
-
-        // Sadece ileri yönde bir hareket vektörü oluşturma
-        Vector2 hareketYonu = transform.right;
+        rb = GetComponent<Rigidbody2D>();
+        
         rb.gravityScale = 1.0f;
         // Hareket yönüne ve hızına göre klona bir hareket vektörü uygulama
-        rb.velocity = hareketYonu * hareketHizi;
     }
     void Update()
     {
+        float hareketYonu = Input.GetAxis("Horizontal");
         // Sadece ileri yönde bir hareket vektörü oluşturma
-        Vector2 hareketYonu = transform.right;
-
+        if (hareketYonu > 0)
+        {
+            moveDirection = Vector2.right;
+        }
+        else
+        {
+            moveDirection = Vector2.left;
+        }
         // Hareket yönüne ve hızına göre klona bir hareket vektörü uygulama
-        GetComponent<Rigidbody2D>().velocity = hareketYonu * hareketHizi;
+        rb.velocity = moveDirection * hareketHizi;
         if (cloneLiveTime <= 0)
         {
-        Destroy(gameObject);
+            Destroy(gameObject);
         }
-
         cloneLiveTime -= Time.deltaTime;
     }
 

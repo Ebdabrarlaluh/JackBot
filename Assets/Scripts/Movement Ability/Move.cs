@@ -39,12 +39,10 @@ public class Move : MonoBehaviour
         if (horizontalInput > 0)
         {
             spriteRenderer.flipX = false;
-           
         }
         else if (horizontalInput < 0)
         {
             spriteRenderer.flipX = true;
-
         }
     }
 }

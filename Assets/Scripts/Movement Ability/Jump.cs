@@ -19,7 +19,7 @@ public class Jump : MonoBehaviour
     void Update()
     {
         onGround = Physics2D.OverlapCircle(GroundCheck.position, 0.25f, LayerMask.GetMask("Ground"));
-        if (Input.GetKeyDown(KeyCode.Space) && onGround)
+        if (Input.GetKeyDown(KeyCode.Space) && onGround || Input.GetKeyDown(KeyCode.W) && onGround)
         {
             playerAnimator.SetTrigger("Jump");
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);

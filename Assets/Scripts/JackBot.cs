@@ -19,7 +19,6 @@ public class JackBot : MonoBehaviour
         if (zamanlayici <= 0f)
         {
             gameObject.SetActive(false); // Objeyi devre dışı bırak
-            // gameObject.SetActive(true); // Eğer objenin tekrar görünmesini istiyorsanız bu satırı ekleyebilirsiniz
             zamanlayici = gorunmeSuresi; // Zamanlayıcıyı sıfırla veya tekrar başlat
         }
     }
