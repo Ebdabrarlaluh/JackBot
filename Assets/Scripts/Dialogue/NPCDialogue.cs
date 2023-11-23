@@ -6,9 +6,16 @@ public class NPCDialogue : MonoBehaviour
 {
     public Dialogue dialogue;
 
-    private void Start()
+    void Start()
     {
-        TriggerDialogue();
+        if (dialogue != null)
+        {
+            TriggerDialogue();
+        }
+        else
+        {
+            Debug.LogError("Dialogue object is null!");
+        }
     }
     public void TriggerDialogue()
     {

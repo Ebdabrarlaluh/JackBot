@@ -9,6 +9,8 @@ public class spinJackBot : MonoBehaviour
     public GameObject[] activeObjects;
     private bool onceSpin;
 
+    public AbilityText abilities;
+
     //public Image firstImage;
     //public Image secondImage;
 
@@ -64,7 +66,12 @@ public class spinJackBot : MonoBehaviour
             }
 
             int randomIndex = Random.Range(0, slotObjects.Length);
+            
             activateScripts(slotObjects[randomIndex]);
+
+            abilities.AbilityDialogue(slotObjects[randomIndex].name, 0);
+
+
             slotObjects[randomIndex].SetActive(true);
 
             //SpriteRenderer spriteRenderer = slotObjects[randomIndex].GetComponent<SpriteRenderer>();
@@ -108,7 +115,11 @@ public class spinJackBot : MonoBehaviour
             }
 
             int secondRandomIndex = Random.Range(0, secondSlotObjects.Length);
+
             activateScripts(secondSlotObjects[secondRandomIndex]);
+
+            abilities.AbilityDialogue(secondSlotObjects[secondRandomIndex].name, 1);
+
             secondSlotObjects[secondRandomIndex].SetActive(true);
 
             //SpriteRenderer spriteRenderer2 = secondSlotObjects[secondRandomIndex].GetComponent<SpriteRenderer>();

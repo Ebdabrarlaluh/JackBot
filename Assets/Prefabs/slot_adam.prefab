@@ -1,20 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &5435150145729931991
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7773113078668452793}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f79ec708d7a0aa4cba46639456fc48b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    name: BOT
-    sentences: []
 --- !u!1 &8055478531818699834
 GameObject:
   m_ObjectHideFlags: 0
@@ -518,6 +503,7 @@ GameObject:
   - component: {fileID: 8055478532905778791}
   - component: {fileID: 8055478532905778788}
   - component: {fileID: 8055478532905778793}
+  - component: {fileID: 2456367299356012473}
   - component: {fileID: 5504963885403984742}
   m_Layer: 0
   m_Name: slot_adam
@@ -544,7 +530,7 @@ Transform:
   - {fileID: 8055478532330877307}
   - {fileID: 8055478531818699836}
   - {fileID: 8055478533204575149}
-  - {fileID: 3466700663314992162}
+  - {fileID: 2720915237128181902}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -619,6 +605,7 @@ MonoBehaviour:
   - {fileID: 8055478532330877305}
   - {fileID: 8055478531818699834}
   activeObjects: []
+  abilities: {fileID: 2456367299356012473}
   jackpot: {fileID: 8055478532905778793}
 --- !u!114 &8055478532905778793
 MonoBehaviour:
@@ -635,6 +622,23 @@ MonoBehaviour:
   objectWithScripts: {fileID: 4931786342702888908, guid: 89f80dbb01ee1f346a1fd42d0d707e22,
     type: 3}
   allScripts: []
+--- !u!114 &2456367299356012473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8055478532905778789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f920a140a35e8f46a760cf961ef9103, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: 
+    sentences: []
+  firstAbility: 
+  secondAbility: 
 --- !u!114 &5504963885403984742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -972,13 +976,58 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &5163930702864455321
+--- !u!1001 &5942332043051483701
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 8055478532905778790}
     m_Modifications:
+    - target: {fileID: 364604987479466864, guid: 15a3c622f6f2cb043ab790fcedd67420,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 364604987479466864, guid: 15a3c622f6f2cb043ab790fcedd67420,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 364604987479466864, guid: 15a3c622f6f2cb043ab790fcedd67420,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 364604987479466864, guid: 15a3c622f6f2cb043ab790fcedd67420,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2328186886238527100, guid: 15a3c622f6f2cb043ab790fcedd67420,
+        type: 3}
+      propertyPath: dialogue.name
+      value: 'BOT:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795759446543243352, guid: 15a3c622f6f2cb043ab790fcedd67420,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795759446543243352, guid: 15a3c622f6f2cb043ab790fcedd67420,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795759446543243352, guid: 15a3c622f6f2cb043ab790fcedd67420,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795759446543243352, guid: 15a3c622f6f2cb043ab790fcedd67420,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3008811178938317964, guid: 15a3c622f6f2cb043ab790fcedd67420,
         type: 3}
       propertyPath: m_Mesh
@@ -1101,15 +1150,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15a3c622f6f2cb043ab790fcedd67420, type: 3}
---- !u!1 &7773113078668452793 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3203839118371058976, guid: 15a3c622f6f2cb043ab790fcedd67420,
-    type: 3}
-  m_PrefabInstance: {fileID: 5163930702864455321}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &3466700663314992162 stripped
+--- !u!224 &2720915237128181902 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8626018912736664251, guid: 15a3c622f6f2cb043ab790fcedd67420,
     type: 3}
-  m_PrefabInstance: {fileID: 5163930702864455321}
+  m_PrefabInstance: {fileID: 5942332043051483701}
   m_PrefabAsset: {fileID: 0}

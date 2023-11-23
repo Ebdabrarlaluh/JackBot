@@ -8,12 +8,14 @@ public class DialogueManager : MonoBehaviour
     public TMP_Text nameText;
     public TMP_Text dialogueText;
 
-    private Queue<string> sentences;
-    void Start()
+
+    private readonly Queue<string> sentences = new Queue<string>();
+
+    private void Start()
     {
-        sentences = new Queue<string>();
+                
     }
-    private void Update()
+    void Update()
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
@@ -22,6 +24,7 @@ public class DialogueManager : MonoBehaviour
     }
     public void StartDialogue(Dialogue dialogue)
     {
+
         nameText.text = dialogue.name;
 
         sentences.Clear();
@@ -33,6 +36,13 @@ public class DialogueManager : MonoBehaviour
         DisplayNextSentence();
     }
 
+    public void addSentences(Dialogue dialogue)
+    {
+        foreach (string sentence in dialogue.sentences)
+        {
+            sentences.Enqueue(sentence);
+        }
+    }
     public void DisplayNextSentence()
     {
         if (sentences.Count == 0) {
@@ -43,6 +53,7 @@ public class DialogueManager : MonoBehaviour
         string sentence =sentences.Dequeue();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
+
     }
     IEnumerator TypeSentence(string sentence)
     {
@@ -55,7 +66,7 @@ public class DialogueManager : MonoBehaviour
     }
     void EndDialogue()
     {
-
+        
     }
 }
    
