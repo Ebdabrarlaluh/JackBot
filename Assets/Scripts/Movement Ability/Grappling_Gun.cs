@@ -47,6 +47,9 @@ public class Grappling_Gun : MonoBehaviour
     [SerializeField] private float targetDistance = 3;
     [SerializeField] private float targetFrequncy = 1;
 
+    [SerializeField] private Transform GroundCheck;
+    private bool onGround;
+
     [HideInInspector] public Vector2 grapplePoint;
     [HideInInspector] public Vector2 grappleDistanceVector;
 
@@ -90,11 +93,18 @@ public class Grappling_Gun : MonoBehaviour
             grappleRope.enabled = false;
             m_springJoint2D.enabled = false;
             m_rigidbody.gravityScale = 2;
+            
         }
         else
         {
             Vector2 mousePos = m_camera.ScreenToWorldPoint(Input.mousePosition);
             RotateGun(mousePos, true);
+
+            onGround = Physics2D.OverlapCircle(GroundCheck.position, 0.25f, LayerMask.GetMask("Ground"));
+            if (onGround)
+            {
+                m_rigidbody.velocity = Vector2.zero;
+            }
         }
     }
 

@@ -262,7 +262,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4931786342702888908}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2622a552df4889f4a99da6dae0c188dd, type: 3}
   m_Name: 
@@ -280,7 +280,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4931786342702888908}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a54b3215ad643494ebfbe67e345141c7, type: 3}
   m_Name: 
@@ -295,7 +295,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4931786342702888908}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e3cb16dee2db36c43986711540bb1fb2, type: 3}
   m_Name: 
@@ -525,14 +525,15 @@ MonoBehaviour:
   m_rigidbody: {fileID: 4931786342702888905}
   rotateOverTime: 1
   rotationSpeed: 18.3
-  hasMaxDistance: 0
-  maxDistnace: 5
+  hasMaxDistance: 1
+  maxDistnace: 11
   launchToPoint: 1
-  launchType: 0
-  launchSpeed: 4
+  launchType: 1
+  launchSpeed: 1
   autoConfigureDistance: 0
   targetDistance: 3
   targetFrequncy: 1
+  GroundCheck: {fileID: 4931786343492161696}
   grapplePoint: {x: 0, y: 0}
   grappleDistanceVector: {x: 0, y: 0}
 --- !u!61 &4931786342845337954
