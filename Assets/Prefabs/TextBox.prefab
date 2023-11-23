@@ -423,6 +423,7 @@ GameObject:
   - component: {fileID: 8626018912736664251}
   - component: {fileID: 940932345493285656}
   - component: {fileID: 2328186886238527100}
+  - component: {fileID: 3595584101704765313}
   m_Layer: 0
   m_Name: TextBox
   m_TagString: Untagged
@@ -516,3 +517,22 @@ MonoBehaviour:
   dialogue:
     name: 
     sentences: []
+--- !u!95 &3595584101704765313
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3203839118371058976}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0832885a09142414682af784016d9e88, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -8,6 +8,7 @@ public class DialogueManager : MonoBehaviour
     public TMP_Text nameText;
     public TMP_Text dialogueText;
 
+    public Animator textAnimator;
 
     private readonly Queue<string> sentences = new Queue<string>();
 
@@ -24,7 +25,7 @@ public class DialogueManager : MonoBehaviour
     }
     public void StartDialogue(Dialogue dialogue)
     {
-
+        textAnimator.SetBool("IsTalking", true);
         nameText.text = dialogue.name;
 
         sentences.Clear();
@@ -36,12 +37,12 @@ public class DialogueManager : MonoBehaviour
         DisplayNextSentence();
     }
 
-    public void addSentences(Dialogue dialogue)
+    public void addSentences(string dialogue)
     {
-        foreach (string sentence in dialogue.sentences)
-        {
-            sentences.Enqueue(sentence);
-        }
+        
+        textAnimator.SetBool("IsTalking", true);
+        sentences.Enqueue(dialogue);
+        DisplayNextSentence();
     }
     public void DisplayNextSentence()
     {
@@ -66,7 +67,7 @@ public class DialogueManager : MonoBehaviour
     }
     void EndDialogue()
     {
-        
+        textAnimator.SetBool("IsTalking", false);
     }
 }
    

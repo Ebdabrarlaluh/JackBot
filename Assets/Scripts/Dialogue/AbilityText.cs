@@ -14,6 +14,7 @@ public class AbilityText : MonoBehaviour
 
         dialogue.sentences[i] = name + dialogue.sentences[i];
 
-        FindObjectOfType<DialogueManager>().addSentences(dialogue);
+        FindObjectOfType<DialogueManager>().addSentences(dialogue.sentences[i]);
+        
     }
 }
