@@ -34,7 +34,7 @@ public class Move : MonoBehaviour
         }
         else
         {
-            rb.velocity = new Vector2(movement * friction, rb.velocity.y);
+            //rb.velocity = new Vector2(movement * friction, rb.velocity.y); //Burası Grapple Gunda bozulmaya neden oluyor
             playerAnimator.SetBool("isMoving", false);
         }
 
