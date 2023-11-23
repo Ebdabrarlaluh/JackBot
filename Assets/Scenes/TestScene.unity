@@ -2533,6 +2533,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &285456697 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8411580496192363117, guid: 097f0b848d0c58248aad6119270c5c0a,
+    type: 3}
+  m_PrefabInstance: {fileID: 511614218}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &318865708
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2746,6 +2758,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2456367299356012473, guid: 097f0b848d0c58248aad6119270c5c0a,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2456367299356012473, guid: 097f0b848d0c58248aad6119270c5c0a,
+        type: 3}
+      propertyPath: dialogue.name
+      value: 'BOT:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2456367299356012473, guid: 097f0b848d0c58248aad6119270c5c0a,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[0]
+      value: ' is your moving ability'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2456367299356012473, guid: 097f0b848d0c58248aad6119270c5c0a,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[1]
+      value: ' is your special ability'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3315176746277736163, guid: 097f0b848d0c58248aad6119270c5c0a,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4314254588044401231, guid: 097f0b848d0c58248aad6119270c5c0a,
         type: 3}
       propertyPath: m_Mesh
@@ -2836,6 +2873,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8230335058485517385, guid: 097f0b848d0c58248aad6119270c5c0a,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8230335058485517385, guid: 097f0b848d0c58248aad6119270c5c0a,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[0]
+      value: HEEY! You finally woke up JACK
+      objectReference: {fileID: 0}
+    - target: {fileID: 8230335058485517385, guid: 097f0b848d0c58248aad6119270c5c0a,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[1]
+      value: NOOW, YOU ARE ALL MINE!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8230335058485517385, guid: 097f0b848d0c58248aad6119270c5c0a,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[2]
+      value: IF YOU WANT TO MOVE THEEEN................
+      objectReference: {fileID: 0}
+    - target: {fileID: 8230335058485517385, guid: 097f0b848d0c58248aad6119270c5c0a,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[3]
+      value: JACKPOT TIMEEE
+      objectReference: {fileID: 0}
     - target: {fileID: 8588448846304673221, guid: 097f0b848d0c58248aad6119270c5c0a,
         type: 3}
       propertyPath: dialogue.sentences.Array.size
@@ -2856,32 +2918,19 @@ PrefabInstance:
       propertyPath: dialogue.sentences.Array.data[2]
       value: Simdi al su ozellikleri de bolumu gec yavsak
       objectReference: {fileID: 0}
+    - target: {fileID: 8914337049831997113, guid: 097f0b848d0c58248aad6119270c5c0a,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 097f0b848d0c58248aad6119270c5c0a, type: 3}
---- !u!114 &511614219 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7018156306655547073, guid: 097f0b848d0c58248aad6119270c5c0a,
+--- !u!95 &643917295 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7174642343547948468, guid: 097f0b848d0c58248aad6119270c5c0a,
     type: 3}
   m_PrefabInstance: {fileID: 511614218}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &511614220 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4802703970566190569, guid: 097f0b848d0c58248aad6119270c5c0a,
-    type: 3}
-  m_PrefabInstance: {fileID: 511614218}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &775176828
 GameObject:
   m_ObjectHideFlags: 0
@@ -2911,8 +2960,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4759a40d91edf3d4da56f24c20500674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameText: {fileID: 511614220}
-  dialogueText: {fileID: 511614219}
+  nameText: {fileID: 853606340}
+  dialogueText: {fileID: 285456697}
+  textAnimator: {fileID: 643917295}
 --- !u!4 &775176830
 Transform:
   m_ObjectHideFlags: 0
@@ -2927,6 +2977,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &853606340 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6302842445940777285, guid: 097f0b848d0c58248aad6119270c5c0a,
+    type: 3}
+  m_PrefabInstance: {fileID: 511614218}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1226812498
 PrefabInstance:
   m_ObjectHideFlags: 0
