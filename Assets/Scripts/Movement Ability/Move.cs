@@ -5,6 +5,7 @@ using UnityEngine;
 public class Move : MonoBehaviour
 {
     public float moveSpeed = 5;
+    float friction = 0.1f;
 
     Animator playerAnimator;
     SpriteRenderer spriteRenderer;
@@ -22,7 +23,7 @@ public class Move : MonoBehaviour
     void Update()
     {
         
-        horizontalInput = Input.GetAxis("Horizontal");
+        horizontalInput = Input.GetAxisRaw("Horizontal");
         float movement = horizontalInput * moveSpeed;
         
         if (horizontalInput != 0)
@@ -33,6 +34,7 @@ public class Move : MonoBehaviour
         }
         else
         {
+            rb.velocity = new Vector2(movement * friction, rb.velocity.y);
             playerAnimator.SetBool("isMoving", false);
         }
 

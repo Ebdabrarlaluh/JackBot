@@ -300,6 +300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3cb16dee2db36c43986711540bb1fb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 5
   cloneDelay: 4
   clone: {fileID: 110968160326902139, guid: 09807f1299fd79240a64452f00be78b2, type: 3}
   cloneKeyCode: 107
