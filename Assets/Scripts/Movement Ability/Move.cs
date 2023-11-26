@@ -5,7 +5,7 @@ using UnityEngine;
 public class Move : MonoBehaviour
 {
     public float moveSpeed = 5;
-    float friction = 0.1f;
+    //float friction = 0.1f;
 
     Animator playerAnimator;
     SpriteRenderer spriteRenderer;
@@ -23,7 +23,7 @@ public class Move : MonoBehaviour
     void Update()
     {
         
-        horizontalInput = Input.GetAxisRaw("Horizontal");
+        horizontalInput = Input.GetAxis("Horizontal");
         float movement = horizontalInput * moveSpeed;
         
         if (horizontalInput != 0)
