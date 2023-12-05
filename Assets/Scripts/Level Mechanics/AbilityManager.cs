@@ -17,10 +17,14 @@ public class AbilityManager : MonoBehaviour
     {
 
         if (name == "Grapple")
-        objectWithScripts.transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(true);
+            objectWithScripts.transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(true);
 
         if (name == "Levitation")
             objectWithScripts.transform.GetChild(2).gameObject.SetActive(true);
+
+        if (name == "FreezeGun")
+            objectWithScripts.transform.GetChild(2).gameObject.SetActive(true);
+            
         
        
 

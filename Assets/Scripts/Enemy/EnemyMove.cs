@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyMove : MonoBehaviour
 {
@@ -8,27 +9,100 @@ public class EnemyMove : MonoBehaviour
     float remainTime;
     float moveTime = 3f;
     float moveSpeed = 5f;
+    bool isFreezed = false;
+    bool isLevitate = false;
+    CountDown countDown;
+    Animator animator;
+    public float heightIncrease = 2f;
+    public float levitateTime = 3f;
+    public float flyTime = 1f;
+    private Vector3 oldPosition;
+
     private void Start()
     {
         remainTime = moveTime;
+        countDown = gameObject.AddComponent<CountDown>();
+        animator = GetComponent<Animator>();
+        
     }
     void FixedUpdate()
     {
-        if (goRight)
+        if (!isFreezed && !isLevitate)
         {
-            transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
-            transform.localScale = new Vector3(-1, 1, 1); // Sağa baktığınızı temin etmek için scale'ı ayarlayın
+            if (goRight)
+            {
+                transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
+                transform.localScale = new Vector3(-1, 1, 1); // Sağa baktığınızı temin etmek için scale'ı ayarlayın
+            }
+            else
+            {
+                transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
+                transform.localScale = new Vector3(1, 1, 1); // Sola baktığınızı temin etmek için scale'ı ayarlayın
+            }
+            remainTime -= Time.deltaTime;
+            if (remainTime <= 0f)
+            {
+                goRight = !goRight; // Süre dolduğunda yönü değiştir
+                remainTime = moveTime; // Bekleme süresini yeniden ayarla
+            }
         }
-        else
+        if (countDown.Bitti)
         {
-            transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
-            transform.localScale = new Vector3(1, 1, 1); // Sola baktığınızı temin etmek için scale'ı ayarlayın
-        }
-        remainTime -= Time.deltaTime;
-        if (remainTime <= 0f)
-        {
-            goRight = !goRight; // Süre dolduğunda yönü değiştir
-            remainTime = moveTime; // Bekleme süresini yeniden ayarla
+            isFreezed = false;
+            animator.SetBool("isFreeze", false);
         }
     }
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.CompareTag("IceBullet"))
+        {
+            countDown.ToplamSure = 5;
+            countDown.Calistir();
+            Destroy(col.gameObject);
+            animator.SetBool("isFreeze", true);
+            isFreezed = true;
+        }
+        if (col.CompareTag("Projectile"))
+        {
+            StartCoroutine(Levitate());
+            isLevitate = true;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.CompareTag("Player"))
+        {
+            Destroy(col.gameObject);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+    }
+
+    private IEnumerator Levitate()
+    {
+        oldPosition = transform.position;
+        Vector3 targetHeight = transform.position + Vector3.up * heightIncrease; // Yükseklik artışının hedef pozisyonu
+
+        float startTime = Time.time; // Başlangıç zamanını kaydet
+        float passingTime = 0f; // Geçen süreyi sakla
+
+        while (passingTime < levitateTime)
+        {
+            passingTime = Time.time - startTime; // Geçen süreyi hesapla
+            float riseRatio = Mathf.Clamp01(passingTime / levitateTime); // Yukarı çıkma oranı
+            animator.SetBool("isLevitate", true);
+            // Yavaşça yukarı çıkma
+            transform.position = Vector3.Lerp(oldPosition, targetHeight, riseRatio);
+
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(1f);
+
+        oldPosition = transform.position;
+        animator.SetBool("isLevitate", false);
+        isLevitate = false;
+    }
 }
+
+

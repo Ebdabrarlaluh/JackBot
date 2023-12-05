@@ -5,14 +5,17 @@ using UnityEngine;
 public class Move : MonoBehaviour
 {
     public float moveSpeed = 5;
-    //float friction = 0.1f;
+    public float jumpForce = 5;
+    float friction = 0.1f;
+    float horizontalInput;
 
-    Animator playerAnimator;
+    [SerializeField] private Transform GroundCheck;
+    private bool onGround;
+
     SpriteRenderer spriteRenderer;
-  
-    private float horizontalInput;
+    Animator playerAnimator; 
     Rigidbody2D rb;
-
+   
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -22,7 +25,7 @@ public class Move : MonoBehaviour
 
     void Update()
     {
-        
+        onGround = Physics2D.OverlapCircle(GroundCheck.position, 0.25f, LayerMask.GetMask("Ground"));
         horizontalInput = Input.GetAxis("Horizontal");
         float movement = horizontalInput * moveSpeed;
         
@@ -34,8 +37,14 @@ public class Move : MonoBehaviour
         }
         else
         {
-            //rb.velocity = new Vector2(movement * friction, rb.velocity.y); //Burası Grapple Gunda bozulmaya neden oluyor
+            rb.velocity = new Vector2(movement * friction, rb.velocity.y); //Burası Grapple Gunda bozulmaya neden oluyor
             playerAnimator.SetBool("isMoving", false);
+        }
+        
+        if (Input.GetKeyDown(KeyCode.Space) && onGround || Input.GetKeyDown(KeyCode.W) && onGround)
+        {
+            playerAnimator.SetTrigger("Jump");
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
 
         if (horizontalInput > 0)

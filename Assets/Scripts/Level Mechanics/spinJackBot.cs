@@ -9,7 +9,7 @@ public class spinJackBot : MonoBehaviour
     public GameObject[] activeObjects;
     private bool onceSpin;
 
-    public AbilityText abilities;
+    //public AbilityText abilities;
 
     //public Image firstImage;
     //public Image secondImage;
@@ -69,7 +69,7 @@ public class spinJackBot : MonoBehaviour
             
             activateScripts(slotObjects[randomIndex]);
 
-            abilities.AbilityDialogue(slotObjects[randomIndex].name, 0);
+            //abilities.AbilityDialogue(slotObjects[randomIndex].name, 0);
 
 
             slotObjects[randomIndex].SetActive(true);
@@ -118,7 +118,7 @@ public class spinJackBot : MonoBehaviour
 
             activateScripts(secondSlotObjects[secondRandomIndex]);
 
-            abilities.AbilityDialogue(secondSlotObjects[secondRandomIndex].name, 1);
+            //abilities.AbilityDialogue(secondSlotObjects[secondRandomIndex].name, 1);
 
             secondSlotObjects[secondRandomIndex].SetActive(true);
 
@@ -136,13 +136,13 @@ public class spinJackBot : MonoBehaviour
     {
         string x = activeObject.name;
 
-        if (x == "Move")
-        {
-            jackpot.EnableScripts("Jump");
-        }
         if (x == "Dash")
         {
             jackpot.EnableScripts("GhostEffect");
+        }
+        if (x == "Freeze")
+        {
+            jackpot.EnableScripts("FreezeGun");//?????????????
         }
 
         jackpot.EnableScripts(x);

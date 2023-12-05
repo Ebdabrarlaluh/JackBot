@@ -12,5 +12,9 @@ public class OnCollision : MonoBehaviour
             Destroy(col.gameObject);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
+        if (!col.gameObject.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

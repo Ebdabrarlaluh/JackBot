@@ -4,17 +4,27 @@ using UnityEngine;
 
 public class RangedEnemy : MonoBehaviour
 {
+
+    SpriteRenderer spriteRenderer;
+    Animator animator; 
+    CountDown freezeCountDown;
+    CountDown countDown;
+
     public GameObject bullet;
     public float bulletSpeed = 5f;
-    CountDown countDown;
     public int direction;
-    SpriteRenderer spriteRenderer;
+    bool isFreezed=false;
+    
     void Start()
     {
+        freezeCountDown = gameObject.AddComponent<CountDown>();
         countDown = gameObject.AddComponent<CountDown>();
-        countDown.ToplamSure = 3;
-        countDown.Calistir();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
+        
+        countDown.ToplamSure = 4;
+        countDown.Calistir();
+        
         if (direction==1)
         {
             spriteRenderer.flipX = true;
@@ -26,11 +36,18 @@ public class RangedEnemy : MonoBehaviour
     }
     void Update()
     {
-        if (countDown.Bitti)
+        if (!isFreezed)
         {
-            Fire();
+            if (countDown.Bitti)
+            {
+                Fire();
+            }
         }
-        
+        if (freezeCountDown.Bitti)
+        {
+            isFreezed = false;
+            animator.SetBool("isFreezed", false);
+        }
     }
     void Fire()
     {
@@ -38,5 +55,15 @@ public class RangedEnemy : MonoBehaviour
         Rigidbody2D bulletRB = mermi.GetComponent<Rigidbody2D>();
         bulletRB.velocity = bulletSpeed * direction * transform.right;
         countDown.Calistir();
+    }
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.CompareTag("IceBullet"))
+        {
+            isFreezed = true;
+            freezeCountDown.ToplamSure = 6;
+            animator.SetBool("isFreezed", true);
+            freezeCountDown.Calistir();
+        }
     }
 }
