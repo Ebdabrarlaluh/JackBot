@@ -1,6 +1,6 @@
 # JackBot
 
-Oyunumuz MagaraJam2023 için tüm bileşenler sıfırdan**üç** günde oluşturulmuştur.  Oyunu geliştirmeye devam ediyoruz.
+Oyunumuz MagaraJam2023 için tüm bileşenler sıfırdan **üç** günde oluşturulmuştur.  Oyunu geliştirmeye devam ediyoruz.
 
 [Oynanabilir Prototip için tıklayınız. (MagaraJam2023 sayfasına yönlendirileceksiniz.)](https://magarajam.com/game/JackBot "Oynanabilir Prototip için")
 
