@@ -1,30 +1,31 @@
 # JackBot
 
-Oyunumuz MagaraJam2023 için tüm bileşenler sıfırdan **üç** günde oluşturulmuştur.  Oyunu geliştirmeye devam ediyoruz.
+All components of our game were created from scratch in **three** days for the MagaraJam2023 event. We are continuing to develop the game.
 
-[Oynanabilir Prototip için tıklayınız. (MagaraJam2023 sayfasına yönlendirileceksiniz.)](https://magarajam.com/game/JackBot "Oynanabilir Prototip için")
+[Click here for the playable prototype (You will be redirected to the MagaraJam2023 page)](https://magarajam.com/game/JackBot "For the playable prototype")
 
-#### Hikaye
-Jack, Bot tarafından alıkoyulmuştur. Artık hareket etmesi bile Bot'un insafına kalmıştır. Bot'un kimliği gizemlidir.
-Her engel karşısında lanetli Bot ona kısıtlı güçler veriyor. Bu şekilde bölümü tamamlamaya çalışan Jack ise hayatta kalabilecek mi?
-#### Oynanış
-Bot'un level başlarında bize kendi jackpot'undan sağladığı rastgele hareket ve düşmanları geçmemizi sağlayan yeteneklerle bölümü tamamlamaya bir sonraki bölüme geçmeye çalışıyoruz.
+#### Storyline
+Jack has been detained by the Bot. Even his mobility now is at the mercy of the Bot. The Bot's identity is a mistery.
+At every obstacle, the unmerciful Bot gives him limited powers. Will Jack survive as he struggles to complete the levels?
 
-###### Hareket Mekanikleri:
-**GrappleHook:** Mouse ile kullanılır. Mekanda bulunan bir duvara tutunup atılmaya yarar.
+#### Gameplay
+At the beginning of each level, the Bot gives some random moves and abilities from its jackpot that help Jack to defeat enemies. Jack tries to complete the level and move on to the next one with those.
 
-**Move:** Basit hareket mekaniğidir WASD ve ok tuşlarıyla kullanılır ama Bot bunu bile bizden almıştır.
+###### Game mechanics:
+**GrappleHook:** Used with the mouse. Helps to hold on to a wall and jump.
 
-**Dash: **J tuşu ile ileri atılmamıza yarayan hareket mekaniğidir.
+**Move:** Simple movement mechanic. Used with WASD and arrows keys - the Bot has taken away even this!
 
-###### Yetenekler:
-**Bubble:** E tuşu ile kullanılıp düşmanları havaya kaldıran bir yetenektir.
+**Dash:** Lets Jack dash forward with the **J** key.
 
-**İnvisibility:** C Tuşu ile kullanılır ve düşmanların bize dokunamamasına yarar.
+###### Abilities:
+**Bubble:** Used with the **E** key. Levitates the enemies.
 
-**Clone:** K tuşu ile kullanılır. Ve Jack'in bir klonu ileri doğru yönelir. Düşmanları yok edebilir.
+**Invisibility:** Used with the **C** key. Prevents the enemies from damaging Jack.
 
-*Daha birçok mekanik geliştirmeye açık ve ilerleyen zamanlarda gelecektir.*
+**Clone:** Used with the **K** key. A clone of Jack appears and moves forward. It can destroy the enemies.
+
+*Many more mechanics are to be developed and added to the game!*
 
 
 
