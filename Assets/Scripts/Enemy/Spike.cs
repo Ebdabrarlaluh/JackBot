@@ -11,8 +11,6 @@ public class Spike : MonoBehaviour
         {
             Destroy(col.gameObject);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-
         }
     }
-
 }

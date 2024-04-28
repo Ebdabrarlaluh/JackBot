@@ -4,34 +4,34 @@ using UnityEngine;
 
 public class RangedEnemy : MonoBehaviour
 {
-
-    SpriteRenderer spriteRenderer;
-    Animator animator; 
     CountDown freezeCountDown;
     CountDown countDown;
-
+    Animator animator;
+    
+    private bool isFreezed = false;
+    public bool rotateAxisX;
+    public bool rotateAxisY;
+    
     public GameObject bullet;
+    public Transform firePoint;
+    
     public float bulletSpeed = 5f;
-    public int direction;
-    bool isFreezed=false;
     
     void Start()
     {
         freezeCountDown = gameObject.AddComponent<CountDown>();
         countDown = gameObject.AddComponent<CountDown>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         
         countDown.ToplamSure = 4;
         countDown.Calistir();
-        
-        if (direction==1)
+        if (rotateAxisX)
         {
-            spriteRenderer.flipX = true;
+            transform.Rotate(0, 180, 0);
         }
-        else if (direction==-1)
+        if (rotateAxisY)
         {
-            spriteRenderer.flipX = false;
+            transform.Rotate(180, 0, 0);
         }
     }
     void Update()
@@ -48,12 +48,20 @@ public class RangedEnemy : MonoBehaviour
             isFreezed = false;
             animator.SetBool("isFreezed", false);
         }
+        if (rotateAxisX)
+        {
+            transform.Rotate(0, 180, 0);
+        }
+        if (rotateAxisY)
+        {
+            transform.Rotate(180, 0, 0);
+        }
     }
     void Fire()
     {
-        GameObject mermi = Instantiate(bullet, new Vector2(transform.position.x + (2 * direction), transform.position.y), transform.rotation);
+        GameObject mermi = Instantiate(bullet, firePoint.position, transform.rotation);
         Rigidbody2D bulletRB = mermi.GetComponent<Rigidbody2D>();
-        bulletRB.velocity = bulletSpeed * direction * transform.right;
+        bulletRB.velocity = bulletSpeed * -transform.right;
         countDown.Calistir();
     }
     private void OnTriggerEnter2D(Collider2D col)

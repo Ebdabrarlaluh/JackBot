@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1546686116681852960}
   - component: {fileID: 1546686116681852963}
   m_Layer: 0
-  m_Name: diken
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

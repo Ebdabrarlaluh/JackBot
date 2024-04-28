@@ -5,12 +5,10 @@ using UnityEngine;
 public class Levitation : MonoBehaviour
 {
     public GameObject mermiPrefab; 
-    public Transform gun;
     public Transform firePoint;
     public KeyCode fireKeyCode = KeyCode.E;
     public float bulletSpeed =25f;
     public float delayTime=3f;
-    float rotationSpeed = 10f;
     bool fireOn = true;
     public AudioSource audio;
     Rigidbody2D rb;
@@ -27,15 +25,8 @@ public class Levitation : MonoBehaviour
             fireOn = false;
             StartCoroutine("ReloadTime");
         }
-        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        RotateGun(mousePos);
     }
-    void RotateGun(Vector3 lookPoint)
-    {
-        Vector3 distanceVector = lookPoint - gun.position;
-        float angle = Mathf.Atan2(distanceVector.y, distanceVector.x) * Mathf.Rad2Deg;
-        gun.rotation = Quaternion.Lerp(gun.rotation, Quaternion.AngleAxis(angle, Vector3.forward), Time.deltaTime * rotationSpeed);
-    }
+    
     void Fire()
     {
         audio.Play();

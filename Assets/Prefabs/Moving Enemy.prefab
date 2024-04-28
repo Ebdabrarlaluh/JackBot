@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 9130622932349538340}
   - component: {fileID: 1634178243}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Moving Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -154,6 +154,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 928a6d2c6869b0c499fff49ccb251ead, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  transforM: {fileID: 9130622932349538395}
+  animator: {fileID: 9130622932349538393}
   heightIncrease: 5
   levitateTime: 2
   flyTime: 2

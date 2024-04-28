@@ -99,12 +99,6 @@ public class Grappling_Gun : MonoBehaviour
         {
             Vector2 mousePos = m_camera.ScreenToWorldPoint(Input.mousePosition);
             RotateGun(mousePos, true);
-
-            onGround = Physics2D.OverlapCircle(GroundCheck.position, 0.25f, LayerMask.GetMask("Ground"));
-            if (onGround)
-            {
-                m_rigidbody.velocity = Vector2.zero;
-            }
         }
     }
 

@@ -10,24 +10,22 @@ public class EnemyMove : MonoBehaviour
     float moveTime = 3f;
     float moveSpeed = 5f;
     bool isFreezed = false;
-    bool isLevitate = false;
     CountDown countDown;
-    Animator animator;
+    public Animator animator;
+    Vector3 oldPosition;
     public float heightIncrease = 2f;
     public float levitateTime = 3f;
+
     public float flyTime = 1f;
-    private Vector3 oldPosition;
 
     private void Start()
     {
         remainTime = moveTime;
-        countDown = gameObject.AddComponent<CountDown>();
-        animator = GetComponent<Animator>();
-        
+        countDown = gameObject.AddComponent<CountDown>(); 
     }
     void FixedUpdate()
     {
-        if (!isFreezed && !isLevitate)
+        if (!isFreezed)
         {
             if (goRight)
             {
@@ -62,10 +60,9 @@ public class EnemyMove : MonoBehaviour
             animator.SetBool("isFreeze", true);
             isFreezed = true;
         }
-        if (col.CompareTag("Projectile"))
+        if (col.CompareTag("Bubblet"))
         {
             StartCoroutine(Levitate());
-            isLevitate = true;
         }
     }
 
@@ -77,9 +74,10 @@ public class EnemyMove : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
-
+    
     private IEnumerator Levitate()
     {
+        isFreezed = true;
         oldPosition = transform.position;
         Vector3 targetHeight = transform.position + Vector3.up * heightIncrease; // Yükseklik artışının hedef pozisyonu
 
@@ -97,11 +95,11 @@ public class EnemyMove : MonoBehaviour
             yield return null;
         }
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
 
         oldPosition = transform.position;
         animator.SetBool("isLevitate", false);
-        isLevitate = false;
+        isFreezed = false;
     }
 }
 

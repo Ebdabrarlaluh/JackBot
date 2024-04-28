@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class FreezeGun : MonoBehaviour
 {
-    public GameObject bulletPrefab; // Mermi prefab'ı
-    public Transform gun; // Silahın Transform bileşeni
+    public GameObject bulletPrefab;
     public Transform firePoint;
-    float rotationSpeed =10f;
+    public KeyCode fireKeyCode = KeyCode.F;
     CountDown countDown;
 
     private void Start()
@@ -19,7 +18,7 @@ public class FreezeGun : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(fireKeyCode))
         {
             if (countDown.Bitti)
             {
@@ -27,16 +26,11 @@ public class FreezeGun : MonoBehaviour
                 countDown.Calistir();
             }
         }
-        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        RotateGun(mousePos);
-    }
-    void RotateGun(Vector3 lookPoint)
-    {
-        Vector3 distanceVector = lookPoint - gun.position;
-        float angle = Mathf.Atan2(distanceVector.y, distanceVector.x) * Mathf.Rad2Deg;
-        gun.rotation = Quaternion.Lerp(gun.rotation, Quaternion.AngleAxis(angle, Vector3.forward), Time.deltaTime * rotationSpeed);   
-    }
+    }   
 }
+
+
+ 
 
 
 

@@ -9,6 +9,7 @@ TagManager:
   - Invisible
   - MovingObjects
   - IceBullet
+  - Bubblet
   layers:
   - Default
   - TransparentFX

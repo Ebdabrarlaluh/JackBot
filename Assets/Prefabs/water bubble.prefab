@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2495839194625449689}
   m_Layer: 0
   m_Name: water bubble
-  m_TagString: Projectile
+  m_TagString: Bubblet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

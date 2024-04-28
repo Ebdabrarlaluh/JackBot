@@ -9,16 +9,11 @@ public class Enemy : MonoBehaviour
     public float levitateTime = 3f;
     public Animator animator;
     public float flyTime = 1f;
-    private Vector3 oldPosition;
-
-    void Start()
-    {
-        oldPosition = transform.position; 
-    }
+    Vector3 oldPosition;
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.CompareTag("Projectile"))
+        if (col.CompareTag("Bubblet"))
         {
             StartCoroutine(Levitate());
         }
@@ -32,9 +27,9 @@ public class Enemy : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
-
-    private IEnumerator Levitate() 
+    private IEnumerator Levitate()
     {
+        oldPosition = transform.position;
         Vector3 targetHeight = transform.position + Vector3.up * heightIncrease; // Yükseklik artışının hedef pozisyonu
 
         float startTime = Time.time; // Başlangıç zamanını kaydet
@@ -44,16 +39,16 @@ public class Enemy : MonoBehaviour
         {
             passingTime = Time.time - startTime; // Geçen süreyi hesapla
             float riseRatio = Mathf.Clamp01(passingTime / levitateTime); // Yukarı çıkma oranı
-            animator.SetBool("levitate", true);
+            animator.SetBool("isLevitate", true);
             // Yavaşça yukarı çıkma
             transform.position = Vector3.Lerp(oldPosition, targetHeight, riseRatio);
-            
+
             yield return null;
         }
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
 
         oldPosition = transform.position;
-        animator.SetBool("levitate", false);
+        animator.SetBool("isLevitate", false);
     }
 }
